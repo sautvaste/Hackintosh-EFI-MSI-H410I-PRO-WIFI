@@ -1,5 +1,5 @@
 # 版本信息（Version infomation）
-OpenCore：0.8.7
+OpenCore：0.7.9
 macOS：macOS Monterey 12.6.1
 
 # 配置信息（Hardware infomation）
@@ -14,5 +14,9 @@ CPU Intel Core i5 10400F
 显卡（Graphics card） AMD Radeon RX 5500 XT 8 GB
 
 硬盘（Disk） 凯侠 rc20 m.2 512GB
+
+声卡（Sound card） Realtek ALC1200
+
+以太网卡（Ethernet card） Intel 1219V Gigabit LAN Controller
 
 Wifi & Bluetooth Broadcom BCM34360cs2
