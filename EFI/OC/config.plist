@@ -250,6 +250,25 @@
 				<key>layout-id</key>
 				<data>AQAAAA==</data>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Slot-1</string>
+				<key>device_type</key>
+				<string>ATY,PythonParent</string>
+				<key>model</key>
+				<string>Navi 14 [Radeon RX 5500/5500M / Pro 5500M]</string>
+				<key>@0,name</key>
+				<string>ATY,Python</string>
+				<key>@1,name</key>
+				<string>ATY,Python</string>
+				<key>@2,name</key>
+				<string>ATY,Python</string>
+				<key>@3,name</key>
+				<string>ATY,Python</string>
+				<key>ATY,EFIVersion</key>
+				<string>01.01.231</string>
+			</dict>
 		</dict>
 		<key>Delete</key>
 		<dict/>
@@ -436,8 +455,6 @@
 				<string></string>
 				<key>MinKernel</key>
 				<string></string>
-				<key>Strategy</key>
-				<string>Disable</string>
 			</dict>
 		</array>
 		<key>Emulate</key>
@@ -791,8 +808,6 @@
 			<false/>
 			<key>CustomSMBIOSGuid</key>
 			<false/>
-			<key>CustomPciSerialDevice</key>
-			<false/>
 			<key>DisableIoMapper</key>
 			<true/>
 			<key>DisableLinkeditJettison</key>
@@ -802,8 +817,6 @@
 			<key>ExtendBTFeatureFlags</key>
 			<false/>
 			<key>ExternalDiskIcons</key>
-			<false/>
-			<key>ForceAquantiaEthernet</key>
 			<false/>
 			<key>ForceSecureBootScheme</key>
 			<false/>
@@ -883,8 +896,8 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>2147483650</integer>
-			<key>LogModules</key>
-			<string>*</string>
+			<key>SerialInit</key>
+			<false/>
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
@@ -913,8 +926,12 @@
 		</array>
 		<key>Security</key>
 		<dict>
+			<key>AllowNvramReset</key>
+			<false/>
 			<key>AllowSetDefault</key>
 			<true/>
+			<key>AllowToggleSip</key>
+			<false/>
 			<key>ApECID</key>
 			<integer>0</integer>
 			<key>AuthRestart</key>
@@ -940,40 +957,6 @@
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
-		<key>Serial</key>
-		<dict>
-			<key>Custom</key>
-			<dict>
-				<key>BaudRate</key>
-				<integer>115200</integer>
-				<key>ClockRate</key>
-				<integer>1843200</integer>
-				<key>DetectCable</key>
-				<false/>
-				<key>ExtendedTxFifoSize</key>
-				<integer>64</integer>
-				<key>FifoControl</key>
-				<integer>7</integer>
-				<key>LineControl</key>
-				<integer>7</integer>
-				<key>PciDeviceInfo</key>
-				<data>/w==</data>
-				<key>RegisterAccessWidth</key>
-				<integer>8</integer>
-				<key>RegisterBase</key>
-				<integer>1016</integer>
-				<key>RegisterStride</key>
-				<integer>1</integer>
-				<key>UseHardwareFlowControl</key>
-				<false/>
-				<key>UseMmio</key>
-				<false/>
-			</dict>
-			<key>Init</key>
-			<false/>
-			<key>Override</key>
-			<false/>
-		</dict>
 		<key>Tools</key>
 		<array>
 			<dict>
@@ -987,8 +970,6 @@
 				<true/>
 				<key>Flavour</key>
 				<string>Auto</string>
-				<key>FullNvramAccess</key>
-				<false/>
 				<key>Name</key>
 				<string>OpenShell.efi</string>
 				<key>Path</key>
@@ -1048,10 +1029,10 @@
 				<string>ForceDisplayRotationInEFI</string>
 			</array>
 		</dict>
+		<key>LegacyEnable</key>
+		<false/>
 		<key>LegacyOverwrite</key>
 		<false/>
-		<key>WriteFlash</key>
-		<true/>
 		<key>LegacySchema</key>
 		<dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
@@ -1080,6 +1061,8 @@
 				<string>BootOrder</string>
 			</array>
 		</dict>
+		<key>WriteFlash</key>
+		<true/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -1150,12 +1133,6 @@
 			<integer>50</integer>
 			<key>KeySubsequentDelay</key>
 			<integer>5</integer>
-			<key>PointerDwellClickTimeout</key>
-			<integer>0</integer>
-			<key>PointerDwellDoubleClickTimeout</key>
-			<integer>0</integer>
-			<key>PointerDwellRadius</key>
-			<integer>0</integer>
 			<key>PointerPollMask</key>
 			<integer>-1</integer>
 			<key>PointerPollMin</key>
@@ -1203,8 +1180,6 @@
 				<string>HfsPlus.efi</string>
 				<key>Enabled</key>
 				<true/>
-				<key>LoadEarly</key>
-				<false/>
 				<key>Path</key>
 				<string>HfsPlus.efi</string>
 			</dict>
@@ -1215,8 +1190,6 @@
 				<string>OpenRuntime.efi</string>
 				<key>Enabled</key>
 				<true/>
-				<key>LoadEarly</key>
-				<false/>
 				<key>Path</key>
 				<string>OpenRuntime.efi</string>
 			</dict>
