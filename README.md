@@ -1,6 +1,7 @@
 # 版本信息（Version infomation）
-OpenCore：0.7.9
-macOS：macOS Monterey 12.6.1
+OpenCore：0.9.7
+
+macOS：macOS Sonoma 14.2.1
 
 # 配置信息（Hardware infomation）
 硬件部件（Hardware ） 型号（model）
